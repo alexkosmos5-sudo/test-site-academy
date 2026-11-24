@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Тестовый сайт академии: учимся публиковать сайты через GitHub и Vercel.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Academy Test Site — публикуем сайт в интернете</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <span class="logo">Academy<span class="logo-accent">Test</span></span>
+      <nav class="nav">
+        <a href="#about">О курсе</a>
+        <a href="#program">Программа</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Учимся публиковать сайты в&nbsp;интернете</h1>
+        <p class="lead">
+          Этот тестовый сайт создан в рамках задания академии: хранилище на GitHub,
+          публикация через Vercel и обновление «по нажатию кнопки».
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#program" id="btn-start">Начать обучение</a>
+          <a class="btn btn-secondary" href="#about" id="btn-about">Что это такое</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2>О курсе</h2>
+        <p>
+          Пошаговый трек: регистрация на GitHub, создание репозитория, загрузка файлов,
+          подключение Vercel и автоматический деплой при каждом изменении.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="program">
+      <div class="container">
+        <h2>Программа</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>GitHub</h3>
+            <p>Создаём репозиторий test-site-academy и загружаем файлы сайта.</p>
+          </article>
+          <article class="card">
+            <h3>Vercel</h3>
+            <p>Подключаем хранилище и публикуем сайт в один клик.</p>
+          </article>
+          <article class="card">
+            <h3>Обновления</h3>
+            <p>Меняем код, отправляем на GitHub — сайт обновляется сам.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="container">
+      <p>Academy Test Site · сделано для учебного задания</p>
+      <p class="muted">Репозиторий: github.com/alexkosmos5-sudo/test-site-academy</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
