@@ -97,23 +97,69 @@ body {
 
 /* Buttons */
 .btn {
+  position: relative;
   display: inline-block;
   padding: 13px 28px;
   border-radius: var(--radius);
   font-weight: 600;
   text-decoration: none;
+  overflow: hidden;
   transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+/* Свечение кнопок */
+@keyframes btn-glow {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(79, 140, 255, 0.45), 0 0 32px rgba(79, 140, 255, 0.22);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(79, 140, 255, 0.8), 0 0 52px rgba(79, 140, 255, 0.42);
+  }
+}
+
+@keyframes btn-glow-soft {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.12);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(140, 180, 255, 0.35);
+  }
 }
 
 .btn-primary {
   background: var(--accent);
   color: #fff;
+  animation: btn-glow 2.4s ease-in-out infinite;
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--text);
   border: 1px solid rgba(255, 255, 255, 0.25);
+  animation: btn-glow-soft 2.4s ease-in-out infinite;
+}
+
+/* Волна-блик, пробегающая по кнопке */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: translateX(-160%) skewX(-20deg);
+  animation: btn-wave 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes btn-wave {
+  0% {
+    transform: translateX(-160%) skewX(-20deg);
+  }
+  55%, 100% {
+    transform: translateX(320%) skewX(-20deg);
+  }
 }
 
 .btn:hover {
@@ -121,7 +167,7 @@ body {
 }
 
 .btn-primary:hover {
-  box-shadow: 0 8px 22px rgba(79, 140, 255, 0.35);
+  box-shadow: 0 8px 22px rgba(79, 140, 255, 0.35), 0 0 28px rgba(79, 140, 255, 0.55);
 }
 
 .btn-secondary:hover {
